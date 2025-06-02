@@ -38,6 +38,26 @@
       .then(res => res.text())
       .then(html => {
         document.querySelector('.content').innerHTML = html;
+    const scripts2 = document.querySelector('.content').querySelectorAll("script");
+    scripts2.forEach(oldScript => {
+      const newScript = document.createElement("script");
+      if (oldScript.src) {
+        newScript.src = oldScript.src;
+      } else {
+        newScript.textContent = oldScript.textContent;
+      }
+      document.body.appendChild(newScript);
+    });
+    const scripts1 = document.querySelector('.content').querySelectorAll("script");
+    scripts1.forEach(oldScript => {
+      const newScript = document.createElement("script");
+      if (oldScript.src) {
+        newScript.src = oldScript.src;
+      } else {
+        newScript.textContent = oldScript.textContent;
+      }
+      document.body.appendChild(newScript);
+    });
       })
       .catch(err => {
         document.querySelector('.content').innerHTML = '<p style="color:red;">ไม่สามารถโหลดหน้าหลักได้</p>';
@@ -65,6 +85,16 @@ document.querySelectorAll('.menu a, .home-button').forEach(link => {
       })
       .then(html => {
         document.querySelector('.content').innerHTML = html;
+    const scripts1 = document.querySelector('.content').querySelectorAll("script");
+    scripts1.forEach(oldScript => {
+      const newScript = document.createElement("script");
+      if (oldScript.src) {
+        newScript.src = oldScript.src;
+      } else {
+        newScript.textContent = oldScript.textContent;
+      }
+      document.body.appendChild(newScript);
+    });
       })
       .catch(err => {
         document.querySelector('.content').innerHTML = '<p style="color:red;">เกิดข้อผิดพลาด: ไม่สามารถโหลดข้อมูลได้</p>';
