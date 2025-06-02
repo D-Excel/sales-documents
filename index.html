@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D-Excel เอกสารการขาย</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="logo.png" alt="D-Excel Logo" />
+      </div>
+      <nav class="menu">
+        <a href="menu1.html">บันทึกลูกค้า</a>
+        <a href="menu2.html">สร้างใบเสนอราคา</a>
+        <a href="menu3.html">อนุมัติใบเสนอราคา</a>
+        <a href="menu4.html">ว่าง</a>
+        <a href="menu5.html">ว่าง</a>
+
+
+      </nav>
+    </aside>
+    <div class="main-panel">
+      <div class="topbar">
+        <h1>เอกสารการขาย</h1>
+        <a href="home.html" class="home-button">หน้าหลัก</a>
+      </div>
+      <main class="content"></main>
+    </div>
+  </div>
+
+  <script>
+    // โหลดหน้าหลักตอนเปิดครั้งแรก
+    fetch('home.html')
+      .then(res => res.text())
+      .then(html => {
+        document.querySelector('.content').innerHTML = html;
+      })
+      .catch(err => {
+        document.querySelector('.content').innerHTML = '<p style="color:red;">ไม่สามารถโหลดหน้าหลักได้</p>';
+      });
+
+    // โหลดเมื่อกดเมนู
+    // โหลดเมื่อกดเมนู
+document.querySelectorAll('.menu a, .home-button').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+
+    // ลบ active จากลิงก์ทั้งหมดในเมนู
+    document.querySelectorAll('.menu a').forEach(el => el.classList.remove('active'));
+
+    // ถ้าลิงก์ที่คลิกอยู่ในเมนู sidebar ให้ใส่ active
+    if (link.closest('.menu')) {
+      link.classList.add('active');
+    }
+
+    // โหลดเนื้อหาตามเมนูที่คลิก
+    fetch(link.getAttribute('href'))
+      .then(res => {
+        if (!res.ok) throw new Error('ไม่พบเนื้อหา');
+        return res.text();
+      })
+      .then(html => {
+        document.querySelector('.content').innerHTML = html;
+      })
+      .catch(err => {
+        document.querySelector('.content').innerHTML = '<p style="color:red;">เกิดข้อผิดพลาด: ไม่สามารถโหลดข้อมูลได้</p>';
+      });
+  });
+});
+  </script>
+</body>
+</html>

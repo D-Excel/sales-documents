@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: 'Prompt', sans-serif;
+  background-color: #f5f6f7;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #0066cc;
+  color: white;
+  width: 240px;
+  padding: 16px 16px 32px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .logo img {
+  width: auto;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.menu a {
+  color: white;
+  text-align: right;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.menu a:hover {
+  background-color: #005bb5;
+}
+
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu a.active {
+  background-color: #003f88;
+}
+
+.topbar {
+  background-color: #004c99;
+  color: white;
+  padding: 12px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.topbar .home-button {
+  background-color: white;
+  color: #004c99;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.topbar .home-button:hover {
+  background-color: #cce0f5;
+}
+
+.content {
+  flex: 1;
+  background-color: white;
+  padding: 24px 32px 32px 32px;
+  box-sizing: border-box;
+}
+
+.content h2 {
+  background-color: #e6f0ff;
+  padding: 10px 14px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  font-size: 1.25rem;
+}
+
+.content p {
+  line-height: 1.4;
+  margin-bottom: 12px;
+  text-indent: 2.0em;
+}

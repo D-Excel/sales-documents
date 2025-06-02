@@ -1,0 +1,172 @@
+<div class="form-section">
+  <form id="customer-form">
+    <div class="button-row">
+      <button type="submit" id="saveBtn">บันทึกข้อมูล</button>
+      <button type="button" id="editBtn">แก้ไขข้อมูล</button>
+      <input type="text" id="searchName" placeholder="ค้นหาจากชื่อลูกค้า" disabled>
+    </div>
+
+    <div class="row-2col">
+      <div>
+        <label for="recorder">ผู้บันทึก</label>
+        <select id="recorder" required>
+  <option value="" disabled selected hidden></option>
+</select>
+      </div>
+      <div>
+        <label for="date">วันที่บันทึก</label>
+        <input type="date" id="date" required>
+      </div>
+    </div>
+
+    <label for="customerName">ชื่อลูกค้า</label>
+    <input type="text" id="customerName" required>
+
+    <div class="row-2col">
+      <div>
+        <label for="phone">เบอร์โทรศัพท์</label>
+        <input type="text" id="phone" pattern="[0-9 ]{1,20}" maxlength="20">
+      </div>
+      <div>
+        <label for="lineId">Line ID</label>
+        <input type="text" id="lineId" maxlength="30">
+      </div>
+    </div>
+
+    <label for="installAddress">ที่อยู่สำหรับติดตั้ง</label>
+    <textarea id="installAddress"></textarea>
+
+    <label for="googleMap">พิกัด Google Map</label>
+    <input type="url" id="googleMap">
+
+    <label for="docName">ชื่อสำหรับทำเอกสาร</label>
+    <div class="inline-checkbox">
+      <input type="checkbox" id="copyCustomerName">
+      <span class="sub-label">ใช้ชื่อลูกค้า</span>
+    </div>
+    <input type="text" id="docName">
+
+    <label for="docAddress">ที่อยู่สำหรับทำเอกสาร</label>
+    <div class="inline-checkbox">
+      <input type="checkbox" id="copyInstallAddress">
+      <span class="sub-label">ใช้ที่อยู่สำหรับติดตั้ง</span>
+    </div>
+    <textarea id="docAddress"></textarea>
+
+    <label for="additional">ข้อมูลเพิ่มเติม</label>
+    <textarea id="additional" rows="5"></textarea>
+
+    <div class="job-id-wrapper">
+      <label class="job-id-label">
+        <input type="checkbox" id="generateJobId">
+        <span class="sub-label white-text">สร้างเลขที่ Job</span>
+      </label>
+      <span class="job-id-display" id="jobIdDisplay">#00000</span>
+    </div>
+  </form>
+</div>
+
+<style>
+  .form-section {
+    padding: 0 0 40px 24px;
+    max-width: 1000px;
+  }
+  form label {
+    display: block;
+    margin-top: 16px;
+    font-weight: 600;
+    font-family: 'Prompt', sans-serif;
+  }
+  form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+    background-color: #f0f2f5;
+  }
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  .inline-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .sub-label {
+    font-size: 0.95rem;
+    font-family: 'Prompt', sans-serif;
+    color: #3b82f6;
+  }
+  .white-text {
+    color: white;
+  }
+  textarea {
+    resize: vertical;
+  }
+  .button-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+  }
+  .button-row button {
+    background: linear-gradient(to right, #60a5fa, #2563eb);
+    color: white;
+    border: none;
+    width: 25%;
+    padding: 14px 36px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: 'Prompt', sans-serif;
+    font-size: 1rem;
+  }
+  .button-row button:hover {
+    background: linear-gradient(to right, #3b82f6, #1d4ed8);
+  }
+  #searchName {
+    height: 46px;
+    width: 100%;
+    font-family: 'Prompt', sans-serif;
+    background-color: #f0f2f5;
+  }
+  .job-id-wrapper {
+    background-color: #1e3a8a;
+    padding: 16px;
+    border-radius: 6px;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .job-id-label {
+    font-weight: 600;
+    font-family: 'Prompt', sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  .job-id-display {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: white;
+    letter-spacing: 2px;
+  }
+  .row-2col {
+    display: flex;
+    gap: 24px;
+  }
+  .row-2col > div {
+    flex: 1;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+<script src="script-menu1.js"></script>
